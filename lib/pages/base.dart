@@ -15,7 +15,7 @@ class Base extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Games',
+      title: 'Gameboard',
       home: TicTacToeHome(),
       theme: ThemeData(
         primaryColor: Colors.lightBlue[900],
