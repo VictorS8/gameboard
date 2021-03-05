@@ -32,6 +32,7 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
   bool colorChangeControl;
 
   // Matrix way to know the buttons in the tic tac toe
+  // color button[column][row]
   Color button11 = buttonColor;
   Color button12 = buttonColor;
   Color button13 = buttonColor;
