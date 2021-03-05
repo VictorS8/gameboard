@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gameboard/pages/titlegame.dart';
 import 'package:gameboard/pages/tictactoe/tttbottom.dart';
 import 'package:gameboard/pages/tictactoe/tttgame.dart';
+import 'package:gameboard/pages/titlegame.dart';
 
 class TicTacToeHome extends StatefulWidget {
   @override

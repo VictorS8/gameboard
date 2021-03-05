@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class TicTacToeBottom extends StatefulWidget {
   final bool colorChangeControl;
+
   TicTacToeBottom({
     @required this.colorChangeControl,
   });

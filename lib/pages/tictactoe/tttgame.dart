@@ -5,6 +5,7 @@ import 'package:gameboard/logic/tictactoelogic.dart';
 class TicTacToeGame extends StatefulWidget {
   final int whichPlayer;
   final bool colorChangeControl;
+
   TicTacToeGame({
     @required this.whichPlayer,
     @required this.colorChangeControl,

@@ -3,12 +3,14 @@
 - A flutter project made to be a fun way to learn new things 
 - Will be more games but now only tic tac toe
 
-## TIC TAC TOE
+# TIC TAC TOE
 
-<p float="left">
-    <img src="assets/images/darkTicTacToeApp.png" height="600"/>
-    <img src="assets/images/lightTicTacToeApp.png" height="600"/>
-</p>
+## Dark mode 
+![Dark mode](assets/images/darkTicTacToeApp.png)
+
+## Light mode
+![Light mode](assets/images/lightTicTacToeApp.png)
+
 In progress ...
 
 ## Flutter Community
