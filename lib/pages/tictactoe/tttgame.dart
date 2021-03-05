@@ -26,6 +26,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
 
   static TicTacToeLogic tttLogicController = TicTacToeLogic();
 
+  static final String endMessage = 'Start again';
+  static final String winnerMessage = 'WE HAVE A WINNER';
+  static final String playerOneWinnerMessage = 'Player 1 won!';
+  static final String playerTwoWinnerMessage = 'Player 2 won!';
   static final Color playerTwoColor = Colors.lightBlue[100];
   static final Color playerOneColor = Colors.lightBlue[900];
   static final Color buttonColor = Colors.white;
@@ -111,17 +115,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 1 venceu!',
+                                      content: Text(playerOneWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -154,17 +158,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 2 venceu!',
+                                      content: Text(playerTwoWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -218,17 +222,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 1 venceu!',
+                                      content: Text(playerOneWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -260,17 +264,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 2 venceu!',
+                                      content: Text(playerTwoWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -324,17 +328,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 1 venceu!',
+                                      content: Text(playerOneWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -366,17 +370,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 2 venceu!',
+                                      content: Text(playerTwoWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -435,17 +439,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 1 venceu!',
+                                      content: Text(playerOneWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -477,17 +481,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 2 venceu!',
+                                      content: Text(playerTwoWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -541,17 +545,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 1 venceu!',
+                                      content: Text(playerOneWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -583,17 +587,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 2 venceu!',
+                                      content: Text(playerTwoWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -647,17 +651,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 1 venceu!',
+                                      content: Text(playerTwoWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -689,17 +693,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 2 venceu!',
+                                      content: Text(playerTwoWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -758,17 +762,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 1 venceu!',
+                                      content: Text(playerOneWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -800,17 +804,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 2 venceu!',
+                                      content: Text(playerTwoWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -864,17 +868,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 1 venceu!',
+                                      content: Text(playerOneWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -906,17 +910,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 2 venceu!',
+                                      content: Text(playerTwoWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -970,17 +974,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 1 venceu!',
+                                      content: Text(playerOneWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
@@ -1012,17 +1016,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                             for (int i = 0; i <= 8; i++)
                                               clicks[i] = 0;
                                           }),
-                                          child: Text('Começar de novo',
+                                          child: Text(endMessage,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .button),
                                         )
                                       ],
-                                      title: Text('TEMOS UM VENCEDOR',
+                                      title: Text(winnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
-                                      content: Text('Jogador 2 venceu!',
+                                      content: Text(playerTwoWinnerMessage,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline3),
