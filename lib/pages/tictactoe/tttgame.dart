@@ -56,6 +56,39 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
     BoxShadow(color: Colors.lightBlue[700], spreadRadius: 5),
   ];
 
+  void addTapOnTicTacToe(int possibleWin, int index, int whichPlayer,
+      bool colorChangeControl, Color button, List<int> clicks,
+      Color playerColor) {
+    if (clicks[index] == 0) {
+      possibleWin =
+          tttLogicController.oneMove(index, whichPlayer);
+
+      if (whichPlayer == 1) {
+        whichPlayer = 2;
+      } else if (whichPlayer == 2) {
+        whichPlayer = 1;
+      }
+
+      colorChangeControl = !colorChangeControl;
+      button = playerColor;
+      clicks[index] += 1;
+
+      print(clicks);
+      print(index);
+      print(whichPlayer);
+      print(button);
+      print(playerColor);
+      print(colorChangeControl);
+      print(possibleWin);
+    }
+  }
+
+  void clearGameTicTacToe(List<int> clicks) {
+    tttLogicController.clearTicTacToe();
+    for (int i = 0; i <= 8; i++)
+      clicks[i] = 0;
+  }
+
   @override
   Widget build(BuildContext context) {
     return FractionallySizedBox(
@@ -92,6 +125,9 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                         onPressed: () => setState(() {
                           if (colorChangeControl == true) {
                             int possibleWin;
+                            // addTapOnTicTacToe(possibleWin, 0, whichPlayer,
+                            //     colorChangeControl, button11, clicks,
+                            //     playerOneColor);
                             if (clicks[0] == 0) {
                               possibleWin =
                                   tttLogicController.oneMove(0, whichPlayer);
@@ -111,9 +147,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -134,15 +171,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                             }
                           } else {
                             int possibleWin;
-                            if (clicks[0] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(0, whichPlayer);
-                              whichPlayer = 1;
-                              colorChangeControl = !colorChangeControl;
-                              button11 = playerTwoColor;
-                              clicks[0] += 1;
-                            }
-
+                            addTapOnTicTacToe(possibleWin, 0, whichPlayer,
+                                colorChangeControl, button11, clicks,
+                                playerTwoColor);
+                            // if (clicks[0] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(0, whichPlayer);
+                            //   whichPlayer = 1;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button11 = playerTwoColor;
+                            //   clicks[0] += 1;
+                            // }
                             if (possibleWin == 2) {
                               showDialog(
                                   context: context,
@@ -154,9 +193,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -199,14 +239,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                         onPressed: () => setState(() {
                           if (colorChangeControl == true) {
                             int possibleWin;
-                            if (clicks[3] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(3, whichPlayer);
-                              whichPlayer = 2;
-                              colorChangeControl = !colorChangeControl;
-                              button21 = playerOneColor;
-                              clicks[3] += 1;
-                            }
+                            addTapOnTicTacToe(possibleWin, 3, whichPlayer,
+                                colorChangeControl, button21, clicks,
+                                playerOneColor);
+                            // if (clicks[3] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(3, whichPlayer);
+                            //   whichPlayer = 2;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button21 = playerOneColor;
+                            //   clicks[3] += 1;
+                            // }
                             if (possibleWin == 1) {
                               showDialog(
                                   context: context,
@@ -218,9 +261,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -241,14 +285,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                             }
                           } else {
                             int possibleWin;
-                            if (clicks[3] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(3, whichPlayer);
-                              whichPlayer = 1;
-                              colorChangeControl = !colorChangeControl;
-                              button21 = playerTwoColor;
-                              clicks[3] += 1;
-                            }
+                            addTapOnTicTacToe(possibleWin, 3, whichPlayer,
+                                colorChangeControl, button21, clicks,
+                                playerTwoColor);
+                            // if (clicks[3] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(3, whichPlayer);
+                            //   whichPlayer = 1;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button21 = playerTwoColor;
+                            //   clicks[3] += 1;
+                            // }
                             if (possibleWin == 2) {
                               showDialog(
                                   context: context,
@@ -260,9 +307,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -305,14 +353,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                         onPressed: () => setState(() {
                           if (colorChangeControl == true) {
                             int possibleWin;
-                            if (clicks[6] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(6, whichPlayer);
-                              whichPlayer = 2;
-                              colorChangeControl = !colorChangeControl;
-                              button31 = playerOneColor;
-                              clicks[6] += 1;
-                            }
+                            addTapOnTicTacToe(possibleWin, 6, whichPlayer,
+                                colorChangeControl, button31, clicks,
+                                playerOneColor);
+                            // if (clicks[6] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(6, whichPlayer);
+                            //   whichPlayer = 2;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button31 = playerOneColor;
+                            //   clicks[6] += 1;
+                            // }
                             if (possibleWin == 1) {
                               showDialog(
                                   context: context,
@@ -324,9 +375,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -347,14 +399,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                             }
                           } else {
                             int possibleWin;
-                            if (clicks[6] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(6, whichPlayer);
-                              whichPlayer = 1;
-                              colorChangeControl = !colorChangeControl;
-                              button31 = playerTwoColor;
-                              clicks[6] += 1;
-                            }
+                            addTapOnTicTacToe(possibleWin, 6, whichPlayer,
+                                colorChangeControl, button31, clicks,
+                                playerTwoColor);
+                            // if (clicks[6] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(6, whichPlayer);
+                            //   whichPlayer = 1;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button31 = playerTwoColor;
+                            //   clicks[6] += 1;
+                            // }
                             if (possibleWin == 2) {
                               showDialog(
                                   context: context,
@@ -366,9 +421,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -416,14 +472,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                         onPressed: () => setState(() {
                           if (colorChangeControl == true) {
                             int possibleWin;
-                            if (clicks[1] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(1, whichPlayer);
-                              whichPlayer = 2;
-                              colorChangeControl = !colorChangeControl;
-                              button12 = playerOneColor;
-                              clicks[1] += 1;
-                            }
+                            addTapOnTicTacToe(possibleWin, 1, whichPlayer,
+                                colorChangeControl, button12, clicks,
+                                playerOneColor);
+                            // if (clicks[1] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(1, whichPlayer);
+                            //   whichPlayer = 2;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button12 = playerOneColor;
+                            //   clicks[1] += 1;
+                            // }
                             if (possibleWin == 1) {
                               showDialog(
                                   context: context,
@@ -435,9 +494,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -458,14 +518,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                             }
                           } else {
                             int possibleWin;
-                            if (clicks[1] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(1, whichPlayer);
-                              whichPlayer = 1;
-                              colorChangeControl = !colorChangeControl;
-                              button12 = playerTwoColor;
-                              clicks[1] += 1;
-                            }
+                            addTapOnTicTacToe(possibleWin, 1, whichPlayer,
+                                colorChangeControl, button12, clicks,
+                                playerTwoColor);
+                            // if (clicks[1] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(1, whichPlayer);
+                            //   whichPlayer = 1;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button12 = playerTwoColor;
+                            //   clicks[1] += 1;
+                            // }
                             if (possibleWin == 2) {
                               showDialog(
                                   context: context,
@@ -477,9 +540,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -522,14 +586,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                         onPressed: () => setState(() {
                           if (colorChangeControl == true) {
                             int possibleWin;
-                            if (clicks[4] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(4, whichPlayer);
-                              whichPlayer = 2;
-                              colorChangeControl = !colorChangeControl;
-                              button22 = playerOneColor;
-                              clicks[4] += 1;
-                            }
+                            addTapOnTicTacToe(possibleWin, 4, whichPlayer,
+                                colorChangeControl, button22, clicks,
+                                playerOneColor);
+                            // if (clicks[4] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(4, whichPlayer);
+                            //   whichPlayer = 2;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button22 = playerOneColor;
+                            //   clicks[4] += 1;
+                            // }
                             if (possibleWin == 1) {
                               showDialog(
                                   context: context,
@@ -541,9 +608,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -564,14 +632,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                             }
                           } else {
                             int possibleWin;
-                            if (clicks[4] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(4, whichPlayer);
-                              whichPlayer = 1;
-                              colorChangeControl = !colorChangeControl;
-                              button22 = playerTwoColor;
-                              clicks[4] += 1;
-                            }
+                            addTapOnTicTacToe(possibleWin, 4, whichPlayer,
+                                colorChangeControl, button22, clicks,
+                                playerTwoColor);
+                            // if (clicks[4] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(4, whichPlayer);
+                            //   whichPlayer = 1;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button22 = playerTwoColor;
+                            //   clicks[4] += 1;
+                            // }
                             if (possibleWin == 2) {
                               showDialog(
                                   context: context,
@@ -583,9 +654,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -628,14 +700,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                         onPressed: () => setState(() {
                           if (colorChangeControl == true) {
                             int possibleWin;
-                            if (clicks[7] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(7, whichPlayer);
-                              whichPlayer = 2;
-                              colorChangeControl = !colorChangeControl;
-                              button32 = playerOneColor;
-                              clicks[7] += 1;
-                            }
+                            addTapOnTicTacToe(possibleWin, 7, whichPlayer,
+                                colorChangeControl, button32, clicks,
+                                playerOneColor);
+                            // if (clicks[7] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(7, whichPlayer);
+                            //   whichPlayer = 2;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button32 = playerOneColor;
+                            //   clicks[7] += 1;
+                            // }
                             if (possibleWin == 1) {
                               showDialog(
                                   context: context,
@@ -647,9 +722,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -670,14 +746,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                             }
                           } else {
                             int possibleWin;
-                            if (clicks[7] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(7, whichPlayer);
-                              whichPlayer = 1;
-                              colorChangeControl = !colorChangeControl;
-                              button32 = playerTwoColor;
-                              clicks[7] += 1;
-                            }
+                            addTapOnTicTacToe(possibleWin, 7, whichPlayer,
+                                colorChangeControl, button32, clicks,
+                                playerTwoColor);
+                            // if (clicks[7] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(7, whichPlayer);
+                            //   whichPlayer = 1;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button32 = playerTwoColor;
+                            //   clicks[7] += 1;
+                            // }
                             if (possibleWin == 2) {
                               showDialog(
                                   context: context,
@@ -689,9 +768,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -739,14 +819,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                         onPressed: () => setState(() {
                           if (colorChangeControl == true) {
                             int possibleWin;
-                            if (clicks[2] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(2, whichPlayer);
-                              whichPlayer = 2;
-                              colorChangeControl = !colorChangeControl;
-                              button13 = playerOneColor;
-                              clicks[2] += 1;
-                            }
+                            addTapOnTicTacToe(possibleWin, 2, whichPlayer,
+                                colorChangeControl, button13, clicks,
+                                playerOneColor);
+                            // if (clicks[2] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(2, whichPlayer);
+                            //   whichPlayer = 2;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button13 = playerOneColor;
+                            //   clicks[2] += 1;
+                            // }
                             if (possibleWin == 1) {
                               showDialog(
                                   context: context,
@@ -758,9 +841,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -781,14 +865,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                             }
                           } else {
                             int possibleWin;
-                            if (clicks[2] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(2, whichPlayer);
-                              whichPlayer = 1;
-                              colorChangeControl = !colorChangeControl;
-                              button13 = playerTwoColor;
-                              clicks[2] += 1;
-                            }
+                            addTapOnTicTacToe(possibleWin, 2, whichPlayer,
+                                colorChangeControl, button13, clicks,
+                                playerTwoColor);
+                            // if (clicks[2] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(2, whichPlayer);
+                            //   whichPlayer = 1;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button13 = playerTwoColor;
+                            //   clicks[2] += 1;
+                            // }
                             if (possibleWin == 2) {
                               showDialog(
                                   context: context,
@@ -800,9 +887,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -845,14 +933,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                         onPressed: () => setState(() {
                           if (colorChangeControl == true) {
                             int possibleWin;
-                            if (clicks[5] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(5, whichPlayer);
-                              whichPlayer = 2;
-                              colorChangeControl = !colorChangeControl;
-                              button23 = playerOneColor;
-                              clicks[5] += 1;
-                            }
+                            addTapOnTicTacToe(possibleWin, 5, whichPlayer,
+                                colorChangeControl, button23, clicks,
+                                playerOneColor);
+                            // if (clicks[5] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(5, whichPlayer);
+                            //   whichPlayer = 2;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button23 = playerOneColor;
+                            //   clicks[5] += 1;
+                            // }
                             if (possibleWin == 1) {
                               showDialog(
                                   context: context,
@@ -864,9 +955,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -887,14 +979,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                             }
                           } else {
                             int possibleWin;
-                            if (clicks[5] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(5, whichPlayer);
-                              whichPlayer = 1;
-                              colorChangeControl = !colorChangeControl;
-                              button23 = playerTwoColor;
-                              clicks[5] += 1;
-                            }
+                            addTapOnTicTacToe(possibleWin, 5, whichPlayer,
+                                colorChangeControl, button23, clicks,
+                                playerTwoColor);
+                            // if (clicks[5] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(5, whichPlayer);
+                            //   whichPlayer = 1;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button23 = playerTwoColor;
+                            //   clicks[5] += 1;
+                            // }
                             if (possibleWin == 2) {
                               showDialog(
                                   context: context,
@@ -906,9 +1001,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -951,14 +1047,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                         onPressed: () => setState(() {
                           if (colorChangeControl == true) {
                             int possibleWin;
-                            if (clicks[8] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(8, whichPlayer);
-                              whichPlayer = 2;
-                              colorChangeControl = !colorChangeControl;
-                              button33 = playerOneColor;
-                              clicks[8] += 1;
-                            }
+                            addTapOnTicTacToe(possibleWin, 8, whichPlayer,
+                                colorChangeControl, button33, clicks,
+                                playerOneColor);
+                            // if (clicks[8] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(8, whichPlayer);
+                            //   whichPlayer = 2;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button33 = playerOneColor;
+                            //   clicks[8] += 1;
+                            // }
                             if (possibleWin == 1) {
                               showDialog(
                                   context: context,
@@ -970,9 +1069,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
@@ -993,14 +1093,17 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                             }
                           } else {
                             int possibleWin;
-                            if (clicks[8] == 0) {
-                              possibleWin =
-                                  tttLogicController.oneMove(8, whichPlayer);
-                              whichPlayer = 1;
-                              colorChangeControl = !colorChangeControl;
-                              button33 = playerTwoColor;
-                              clicks[8] += 1;
-                            }
+                            addTapOnTicTacToe(possibleWin, 8, whichPlayer,
+                                colorChangeControl, button33, clicks,
+                                playerTwoColor);
+                            // if (clicks[8] == 0) {
+                            //   possibleWin =
+                            //       tttLogicController.oneMove(8, whichPlayer);
+                            //   whichPlayer = 1;
+                            //   colorChangeControl = !colorChangeControl;
+                            //   button33 = playerTwoColor;
+                            //   clicks[8] += 1;
+                            // }
                             if (possibleWin == 2) {
                               showDialog(
                                   context: context,
@@ -1012,9 +1115,10 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                                         ElevatedButton(
                                           // color: Theme.of(context).buttonColor,
                                           onPressed: () => setState(() {
-                                            tttLogicController.clearTicTacToe();
-                                            for (int i = 0; i <= 8; i++)
-                                              clicks[i] = 0;
+                                            clearGameTicTacToe(clicks);
+                                            // tttLogicController.clearTicTacToe();
+                                            // for (int i = 0; i <= 8; i++)
+                                            //   clicks[i] = 0;
                                           }),
                                           child: Text(endMessage,
                                               style: Theme.of(context)
